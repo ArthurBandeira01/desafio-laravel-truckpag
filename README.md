@@ -97,6 +97,6 @@ Para criar os testes utilizei o comando a seguir seguindo o padrão de estrutura
 Link Collection Postman: <https://api.postman.com/collections/12254422-4f3bd192-6afe-4fe0-8a8e-d21a69f506cd?access_key=PMAT-01HCF2Q343YNY05SQ0CB722MXD>
 
 ### Vídeo de apresentação do projeto
-Link do vídeo: <https://coodesh.com>
+Link do vídeo: <https://youtu.be/ejh0cA_Lt9I>
 
 This is a challenge by [Coodesh](https://coodesh.com/)
