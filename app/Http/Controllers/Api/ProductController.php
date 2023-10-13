@@ -24,6 +24,8 @@ class ProductController extends Controller
         $this->productImportHistoryModel = $productImportHistoryModel;
     }
 
+
+
     public function index()
     {
         $databaseConnection = DB::connection()->getPdo() ? 'Connected' : 'Not Connected';

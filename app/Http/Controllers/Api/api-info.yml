@@ -1,0 +1,62 @@
+openapi: 3.0.2
+info:
+  title: API Rest Truckpag
+  version: 1.0.0
+paths:
+  /:
+    get:
+      summary: Status da API
+      operationId: getStatus
+      responses:
+        '200':
+          description: OK
+  /products:
+    get:
+      summary: Listar produtos
+      operationId: listProducts
+      responses:
+        '200':
+          description: Lista de produtos
+    post:
+      summary: Criar um novo produto
+      operationId: createProduct
+      responses:
+        '201':
+          description: Produto criado com sucesso
+  /products/{code}:
+    get:
+      summary: Obter detalhes de um produto
+      operationId: showProduct
+      parameters:
+        - name: code
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Detalhes do produto
+    put:
+      summary: Atualizar um produto
+      operationId: updateProduct
+      parameters:
+        - name: code
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Produto atualizado com sucesso
+    delete:
+      summary: Excluir um produto
+      operationId: deleteProduct
+      parameters:
+        - name: code
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Produto excluído com sucesso

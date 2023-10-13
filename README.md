@@ -73,11 +73,11 @@ php artisan make:factory ProductFactory
 ```
 Já partindo para a 2° parte do challenge foi feito as rotas e endpoints para a API, no caso foram 5:
 
-* GET '/' ----> Detalhes da API, se conexão leitura e escritura com a base de dados está OK, horário da última vez que o CRON foi executado, tempo online e uso de memória.
-* GET '/products' ----> Listar todos os produtos da base de dados, adicionar sistema de paginação para não sobrecarregar o REQUEST
-* GET '/products/{code}' ----> Obter a informação somente de um produto da base de dados
-* PUT '/products/{code}' ----> Será responsável por receber atualizações do Projeto Web
-* DELETE '/products/{code}' ----> Mudar o status do produto para trash
+* GET '/': Detalhes da API, se conexão leitura e escritura com a base de dados está OK, horário da última vez que o CRON foi executado, tempo online e uso de memória.
+* GET '/products': Listar todos os produtos da base de dados, adicionar sistema de paginação para não sobrecarregar o REQUEST
+* GET '/products/{code}': Obter a informação somente de um produto da base de dados
+* PUT '/products/{code}': Será responsável por receber atualizações do Projeto Web
+* DELETE '/products/{code}': Mudar o status do produto para trash
 
 Utilizei o Guzzle para fazer requisições e para baixá-lo rodei o seguinte comando:
 
@@ -88,11 +88,21 @@ Para criar os testes utilizei o comando a seguir seguindo o padrão de estrutura
 `php artisan make:test app/Http/Controllers/Api/ProductTest`
 
 **NOTAS**: 
-* Para rodar o teste pode-se utilizar o seguinte comando com o método de teste -> `php artisan test --filter ProductTest::testIndex` 
+* Para rodar o teste unitário pode-se utilizar o seguinte comando com o método de teste -> `php artisan test --filter ProductTest::testIndex` 
 * Para rodar o servidor: 
-```php artisan serve
-    php artisan migrate db:seed
+``` 
+php artisan migrate db:seed
+php artisan serve
 ```
+### Documentação da API Rest com Open Api (3.0 - Swagger) 
+ 
+Utilizei a dependência do [L5-Swagger]() para documentar a API Rest na rota '/api/documentation'
+
+`composer require "darkaonline/l5-swagger"`
+
+![API Rest Truckpag](https://raw.githubusercontent.com/ArthurBandeira01/desafio-laravel-truckpag/master/API-Rest-Truckpag.png)
+
+Criei um arquivo api-info.yml no diretório app/Http/Controllers/Api/api-info.yml também com a documentação da API.
 
 Link Collection Postman: <https://api.postman.com/collections/12254422-4f3bd192-6afe-4fe0-8a8e-d21a69f506cd?access_key=PMAT-01HCF2Q343YNY05SQ0CB722MXD>
 
